@@ -1,0 +1,64 @@
+body {
+  line-height: 1.75em;
+  margin: 1rem 2rem;
+  font-family: "Gill Sans","Gill Sans MT",Calibri,sans-serif;
+  counter-reset: line;
+  font-size: 12pt;
+}
+
+p {
+  margin: 0;
+  font-family: "Andale Mono", AndaleMono, "Lucida Console", monospace;
+}
+
+p:before {
+  counter-increment: line;
+  content: counter(line);
+  display: inline-block;
+  border-right: 1px solid #ddd;
+  padding: 0 .5em;
+  margin-right: .5em;
+  color: #ccc;
+  width: 2em;
+  text-align: right;
+
+  /* Prevent line numbers from being selected */
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari*/
+  -khtml-user-select: none; /* Konqueror */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+h1 {
+  counter-reset: line;
+}
+
+h2 {
+  font-style: italic;
+}
+
+h3 {
+  margin: 1.5em 0 0 0;
+  font-family: "Andale Mono", AndaleMono, "Lucida Console", monospace;
+  /*font-style: italic;*/
+  font-size: 12pt;
+  font-weight: normal;
+  color: #999;
+}
+
+h3:before {
+  content: "[";
+}
+
+h3:after {
+  content: "]";
+}
+
+/* Use as a spacer between measures of the same verse or chorus */
+hr {
+  visibility: hidden;
+  margin: 1em 0;
+}

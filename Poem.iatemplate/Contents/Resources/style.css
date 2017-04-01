@@ -1,0 +1,51 @@
+body {
+  line-height: 1.75em;
+  margin: 1rem 2rem;
+  font-family: "Gill Sans","Gill Sans MT",Calibri,sans-serif;
+  counter-reset: line;
+  font-size: 12pt;
+  text-align: center;
+}
+
+main {
+  margin: 0 auto;
+  text-align: left;
+  display: inline-block;
+}
+
+p {
+  margin: 0;
+  line-height: 1em;
+  counter-increment: line;
+}
+
+p:before {
+  content: ' ';
+  width: 2em;
+  display: inline-block;
+}
+
+p:nth-of-type(5n):before {
+  content: counter(line);
+  display: inline-block;
+  padding: 0 .5em;
+  margin-right: .5em;
+  color: #ccc;
+  width: 2em;
+  text-align: right;
+  font-size: 0.6em;
+  font-style: italic;
+
+  /* Prevent line numbers from being selected */
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari*/
+  -khtml-user-select: none; /* Konqueror */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+}
+
+hr {
+  visibility: hidden;
+  margin: 1em 0;
+}
