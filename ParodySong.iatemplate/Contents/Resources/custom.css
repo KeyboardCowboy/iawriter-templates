@@ -1,0 +1,34 @@
+body {
+    max-width: 48em;
+}
+
+table, tbody {
+    border: none;
+}
+
+tr:nth-child(even) td {
+    background-color: #eeeeee;
+}
+
+.night-mode tr:nth-child(even) td {
+    background-color: #222222;
+}
+
+td {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 0;
+}
+
+.center-headings :-webkit-any(h1, h2, h3, h4, h5) {
+    text-align: left;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 2em;
+}

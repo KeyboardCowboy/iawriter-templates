@@ -1,0 +1,306 @@
+/**
+ * iA Writer Template “Manuscript (Quattro)”
+ */
+
+@import url("style/style-core.css");
+
+@import url("style/style-iAWriterQuattro.css");
+
+@import url("style/style-code.css");
+
+@import url("style/typography-core.css");
+@import url("style/typography-iAWriterQuattro.css");
+
+body {
+  max-width: 38em;
+}
+
+@media print {
+  body {
+    max-width: 365pt;
+  }
+}
+
+/* Emphasis */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong,
+th {
+  font-weight: 700;
+}
+
+/* Headings */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: calc((29 / 16) * 1em);
+  font-size: inherit;
+  line-height: inherit;
+}
+
+h1,
+h2 {
+  margin-bottom: calc((29 / 16) * 1em);
+}
+
+h3,
+h4,
+h5 {
+  margin-bottom: 0;
+}
+
+h4 {
+  font-style: italic;
+}
+
+h5 {
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* Display h6 as run-in: see core.css */
+
+/* Subheading adjustments */
+
+:-webkit-any(h1, h2) + :-webkit-any(h1, h2) {
+  margin-top: calc((15 / 16) * -1em);
+}
+
+:-webkit-any(h1, h2, h3, h4, h5, h6) + :-webkit-any(h3, h4, h5, h6),
+body > h6:first-child {
+  margin-top: 0;
+}
+
+/* Vertical margins (-webkit-any for specificity) */
+p,
+ol,
+ul,
+dl,
+figure,
+blockquote,
+pre,
+table {
+  margin: calc((29 / 16) * 1em)  auto 0;
+}
+
+/* Override vertical margin between headers and block-level elements */
+:-webkit-any(h3, h4, h5) + :-webkit-any(p, ol, ul, dl, figure, blockquote, pre, table),
+:-webkit-any(h1, h2, h3, h4, h5) + h6 + *,
+hr + h6 {
+  margin-top: 0;
+}
+
+/* Lists */
+
+ul,
+ol {
+  padding-left: calc((34 / 14) * 1em); /* 2.4285em = 34px for font-size: 14px. em works better for RWD than % */
+}
+
+@media screen and (min-width: 760px) {
+  ul,
+  ol {
+    padding-left: calc((40 / 16) * 1em); /* 2.5em = ~40px for font-size: 16px. em works better for RWD than % */
+  }
+}
+
+/* Unordered lists use custom bullets: see core.css */
+ul {
+  list-style: none;
+}
+
+ul > li:before {
+  content: "– ";
+  float: left; /* Take out of flow to avoid changing left edge alignment or pushing child paragraph down */
+  margin-left: calc((20 / 16) * -1em); /* -1.1111em = 20px @ font-size: 18px. em works better for RWD than % */
+}
+
+/* Indent ordered lists in blockquotes */
+blockquote ol {
+  margin-left: calc((29 / 768) * 100%); /* % = 29px at width: 768px */
+}
+
+/* Indented ordered list responsive adjustments */
+@media screen and (min-width: 768px) {
+  blockquote ol {
+    margin-left: 29px;
+  }
+}
+
+/* Blockquotes */
+blockquote {
+  margin-left: 0;
+  border-left: 1px #bbb solid; /* Imitate sub-pixel line. See @media section for RWD adjustments. */
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+blockquote > :-webkit-any(h1, h2, h3, h4, h5):first-child {
+  padding-top: calc((8 / 16) * 1em); /* 8px when width: 768px */
+}
+
+/* Override core.css */
+@media screen and (min-width: 100px) {
+  hr {
+    margin-top: calc((29 / 16) * 1em);
+    margin-bottom: calc((28 / 16) * 1em); /* -1px for border-bottom */
+  }
+}
+
+/* Imitate sub-pixel line. See @media section for RWD adjustments. */
+hr,
+caption {
+  border-bottom-color: #bbb;
+}
+
+/* Tables */
+
+table {
+  font-size: calc((14 / 16) * 1em); /* 0.875em = 14px @ font-size: 16px */
+  line-height: calc(24 / 14); /* 1.7143 = 24px @ font-size: 14px */
+}
+
+/* @media Rules */
+
+/* Combined horizontal line styles, supplimenting core.css */
+
+/* Adjust border color to imitate sub-pixel lines */
+@media screen and (min-width: 150px) {
+  hr,
+  caption,
+  tbody th,
+  td {
+    border-bottom-color: #888;
+  }
+
+  tbody th,
+  td {
+    border-top-color: #888;
+  }
+
+  blockquote {
+    border-left-color: #888;
+  }
+}
+
+/* Intended border color from 200px */
+@media screen and (min-width: 200px) {
+  hr,
+  caption,
+  tbody th,
+  td {
+    border-bottom-color: #1a1a1a;
+  }
+
+  tbody th,
+  td {
+    border-top-color: #1a1a1a;
+  }
+
+  blockquote {
+    border-left-color: #1a1a1a;
+  }
+}
+
+/** OBJECTS → see core.css base styles for:
+ *  - Indent Paragraphs
+ *  - Footnotes
+ *  - Task lists
+ */
+
+/* Indent Paragraphs */
+.indent-paragraphs p + p {
+  text-indent: calc((20 / 16) * 1em); /* 1.25em = 20px @ font-size: 16px */
+}
+
+/* Night Mode */
+
+/* Imitate sub-pixel line for narrow widths for elements not defined in core.css */
+
+.night-mode blockquote {
+  border-left-color: #444;
+}
+
+@media screen and (min-device-width: 1152px) {
+  .night-mode blockquote {
+    border-left-color: #666;
+  }
+}
+
+/* First tweakpoint modifying core.css */
+@media screen and (min-width: 150px) {
+  .night-mode hr,
+  .night-mode caption,
+  .night-mode tbody th,
+  .night-mode td {
+    border-bottom-color: #888;
+  }
+
+  .night-mode tbody th,
+  .night-mode td {
+    border-top-color: #888;
+  }
+
+  .night-mode blockquote {
+    border-left-color: #888;
+  }
+}
+
+/* Intended border color from 200px for iOS */
+@media screen and (min-width: 200px) {
+  .night-mode hr,
+  .night-mode caption,
+  .night-mode tbody th,
+  .night-mode td {
+    border-bottom-color: #dedede;
+  }
+
+  .night-mode tbody th,
+  .night-mode td {
+    border-top-color: #dedede;
+  }
+
+  .night-mode blockquote {
+    border-left-color: #dedede;
+  }
+}
+
+/* Intended border color from 200px for OS X */
+@media screen and (min-width: 200px) and (min-device-width: 1152px) {
+  .night-mode hr,
+  .night-mode caption,
+  .night-mode tbody th,
+  .night-mode td {
+    border-bottom-color: #cccccc;
+  }
+
+  .night-mode tbody th,
+  .night-mode td {
+    border-top-color: #cccccc;
+  }
+
+  .night-mode blockquote {
+    border-left-color: #cccccc;
+  }
+}
+
+/* Footnotes uses core.css defaults */
+
+/* Task Lists */
+
+ol .task-list-item {
+  --checkbox-counter-offset: calc(0.55 * var(--checkbox-size));
+}
+
+.task-list-item-checkbox {
+  background-position: 25% 50%; /* tweak alignment */
+  background-size: 58% 58%; /* tweak size */
+}
